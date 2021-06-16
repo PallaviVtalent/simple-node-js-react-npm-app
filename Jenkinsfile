@@ -2,6 +2,7 @@ pipeline {
     agent {
         label 'newone'
     
+
         docker {
             image 'node:lts-buster-slim' 
             args '-p 3000:3000' 
@@ -16,6 +17,7 @@ pipeline {
                 sh 'npm install'
             }
         }
+    }
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
@@ -29,4 +31,4 @@ pipeline {
             }
         }
     }
-}
+

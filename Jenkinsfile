@@ -1,21 +1,21 @@
-pipeline {
+pipeline 
+{
 agent { 
 label 'newone'
 }
 stages {
-  stage ( ' checkout ')
+  stage  (' checkout ')
  {
  steps { 
          checkout scm
    }
-}
-}
-
-stages {
+ } }
+stages 
+  {
   stage ( 'Build')
  {
  steps { 
-         sh 'mvn clean install'
+         sh 'mvn clean install';
    }
 }
 }

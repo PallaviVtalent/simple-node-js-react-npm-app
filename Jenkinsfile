@@ -4,19 +4,17 @@ agent {
 label 'newone'
 }
 stages {
-  stage  (' checkout ')
+  stage  ('checkout')
  {
  steps { 
          checkout scm
    }
- } }
-  
+ } 
   stage ( 'Build')
  {
  steps { 
-         sh 'mvn clean install';
-   }
+         sh "cd /root/angular; npm install"
 }
 }
-
+}
 
